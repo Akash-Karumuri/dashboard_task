@@ -6,7 +6,11 @@
   font-weight: 400;
   font-style: normal;
 }
-
+.flexcenter{
+  display: flex;
+  align-items: center;
+  justify-content:start;
+}
 body{
   width: 100vw;       
   height: 100vh;      
@@ -25,7 +29,6 @@ body{
     background-image: url("./Images/bg_img.png");
   }
   
-  /* Sidebar Styles */
 /* Sidebar.css */
 .sidebar {
     max-width: 320px;
@@ -264,7 +267,7 @@ body{
   border-spacing: 0px 10px;
 }
 .table-scroll {
-  max-height: 290px;
+  max-height: 350px;
   overflow-y: auto;
   padding-right: 5px;
 }
@@ -315,12 +318,21 @@ body{
   max-width: 480px;
   max-height: 410px;
   background-color:#3a3a3a;
+  color: white;
 }
 .overview-card .card-header{
   background-color: #3a3a3a;
+  height: 10%;
+}
+.overview-card .card-body{
+  max-height: 90%;
+  max-width: 100%;
+}
+.overview-card .card-body .task-chart-1, .task-chart-2{
+  max-height: 50%;
+  max-width: 100%;
 }
 
-/* Responsive adjustments */
 @media (max-width: 992px) {
   .welcome-card,
   .quote-card,
@@ -334,38 +346,19 @@ body{
 .project-table {
   width: 100%;
 }
-
-.project-row {
-  display: flex;
-  padding: 8px 0;
-  border-bottom: 1px solid #444;
-}
-
-.project-row.header {
-  font-weight: bold;
-  color: #aaa;
-}
-
-.project-col-name {
-  width: 40%;
-}
-
-.project-col-progress {
-  width: 50%;
-}
-
-.project-col-percent {
-  width: 10%;
-  text-align: right;
+.project-card, .project-card .card-header{
+  background-color: #3a3a3a;
 }
 
 /* Team Progress */
 .team-chart {
-  height: 200px;
-  background-color: #333;
+  max-height: 200px;
+  background-color: #3a3a3a;
   border-radius: 5px;
 }
-
+.team-progress-card, .team-progress-card .card-header{
+  background-color: #3a3a3a;
+}
 /* Notification Panel */
 .notification-panel {
   width: 50px;
@@ -425,7 +418,6 @@ body{
   margin-bottom: 50px;
 }
 
-/* Responsive adjustments */
 @media (max-width: 992px) {
   .sidebar {
     width: 60px;

@@ -1,5 +1,8 @@
 import React from "react";
-
+import TaskOverview from "./TaskOverviewChart1";
+import TaskStatusChart from "./TaskOverviewChart2";
+import ProjectChart1 from "./ProjectChart1";
+import ProjectChart2 from "./ProjectChart2";
 import welcome from "./Images/welcome_img.png";
 import stars from "./Images/stars.png";
 import star from "./Images/star.png";
@@ -23,15 +26,12 @@ import "./Dashboard.css";
 const Dashboard = () => {
   return (
     <div className="dashboard-container">
-      {/* Left Sidebar */}
       <div className="sidebar px-0">
-        {/* Logo */}
         <div className="logo-container">
           <h2 className="logo">KRISP</h2>
           <div className="logo-subtitle">INTERIORS & ARCHITECTURE</div>
         </div>
 
-        {/* Back button */}
         <div className="back-button-container d-inline-flex">
           <div className="horizontal-line"></div>
           <button className="back-button">
@@ -39,7 +39,6 @@ const Dashboard = () => {
           </button>
         </div>
 
-        {/* Menu Items */}
         <div className="menu-container pe-3">
           <a href="#" className="menu-item active py-0">
             <div className="menu-icon">
@@ -69,7 +68,7 @@ const Dashboard = () => {
               <BsGrid size={20} />
             </div>
             <span className="menu-label">My Space</span>
-            <i class="bi bi-chevron-down"></i>
+            <i className="bi bi-chevron-down"></i>
           </a>
 
           <a href="#" className="menu-item">
@@ -77,7 +76,7 @@ const Dashboard = () => {
               <BsPeopleFill size={20} />
             </div>
             <span className="menu-label">My Team</span>
-            <i class="bi bi-chevron-down"></i>
+            <i className="bi bi-chevron-down"></i>
           </a>
 
           <a href="#" className="menu-item">
@@ -96,7 +95,6 @@ const Dashboard = () => {
         </div>
       </div>
 
-      {/* Main Content */}
       <div className="main-content">
         {/* Top Nav */}
         <div className="top-nav">
@@ -107,9 +105,7 @@ const Dashboard = () => {
           </div>
         </div>
 
-        {/* Welcome Card */}
         <div className="container px-0">
-          {/* Welcome and Quote row */}
           <div className="row px-0 mb-3">
             <div className="col-lg-7">
               <div className="welcome-card">
@@ -170,9 +166,7 @@ const Dashboard = () => {
             </div>
           </div>
 
-          {/* Tasks and Task Overview row */}
           <div className="row px-0 mb-3">
-            {/* Tasks Card */}
             <div className="col-lg-7">
               <div className="card task-card">
                 <div className="card-header d-flex justify-content-between align-items-center">
@@ -311,17 +305,22 @@ const Dashboard = () => {
               </div>
             </div>
 
-            {/* Task Overview */}
             <div className="col-lg-5">
               <div className="card overview-card">
                 <div className="card-header d-flex justify-content-between align-items-center">
                   <h5 className="mb-0">Task Overview</h5>
                   <div>
-                    <span className="text-success">80%</span> <BsChevronRight />
+                    <span style={{ color: "#2BCB4E" }}>80%</span>
+                    <BsChevronRight />
                   </div>
                 </div>
                 <div className="card-body">
-                  {/* Task Overview content goes here */}
+                  <div className="task-chart-1 p-0 m-0 flexcenter">
+                    <TaskOverview />
+                  </div>
+                  <div className="task-chart-2 flexcenter">
+                    <TaskStatusChart />
+                  </div>
                 </div>
               </div>
             </div>
@@ -334,73 +333,12 @@ const Dashboard = () => {
               <div className="card-header d-flex justify-content-between align-items-center">
                 <h5 className="mb-0">Projects Progress</h5>
                 <div>
-                  <span className="text-success">70%</span> <BsChevronRight />
+                  <span style={{ color: "#2BCB4E" }}>70%</span>
+                  <BsChevronRight />
                 </div>
               </div>
               <div className="card-body">
-                <div className="project-table">
-                  <div className="project-row header">
-                    <div className="project-col-name">Project Name</div>
-                    <div className="project-col-progress">Project Progress</div>
-                    <div className="project-col-percent"></div>
-                  </div>
-                  <div className="project-row">
-                    <div className="project-col-name">Project Name 1</div>
-                    <div className="project-col-progress">
-                      <div className="progress">
-                        <div
-                          className="progress-bar bg-primary"
-                          style={{ width: "90%" }}
-                        >
-                          90%
-                        </div>
-                      </div>
-                    </div>
-                    <div className="project-col-percent">90%</div>
-                  </div>
-                  <div className="project-row">
-                    <div className="project-col-name">Project Name 2</div>
-                    <div className="project-col-progress">
-                      <div className="progress">
-                        <div
-                          className="progress-bar bg-primary"
-                          style={{ width: "90%" }}
-                        >
-                          90%
-                        </div>
-                      </div>
-                    </div>
-                    <div className="project-col-percent">90%</div>
-                  </div>
-                  <div className="project-row">
-                    <div className="project-col-name">Project Name 3</div>
-                    <div className="project-col-progress">
-                      <div className="progress">
-                        <div
-                          className="progress-bar bg-primary"
-                          style={{ width: "90%" }}
-                        >
-                          90%
-                        </div>
-                      </div>
-                    </div>
-                    <div className="project-col-percent">90%</div>
-                  </div>
-                  <div className="project-row">
-                    <div className="project-col-name">Project Name 4</div>
-                    <div className="project-col-progress">
-                      <div className="progress">
-                        <div
-                          className="progress-bar bg-primary"
-                          style={{ width: "90%" }}
-                        >
-                          90%
-                        </div>
-                      </div>
-                    </div>
-                    <div className="project-col-percent">90%</div>
-                  </div>
-                </div>
+                <ProjectChart1 />
               </div>
             </div>
           </div>
@@ -410,17 +348,10 @@ const Dashboard = () => {
             <div className="card team-progress-card">
               <div className="card-header d-flex justify-content-between align-items-center">
                 <h5 className="mb-0">Team Progress</h5>
-                <div className="text-success">65%</div>
+                <div style={{ color: "#2BCB4E" }}>65%</div>
               </div>
               <div className="card-body">
-                <div className="team-chart">
-                  {/* This would be a bar chart in a real implementation */}
-                  <img
-                    src="/api/placeholder/620/170"
-                    alt="Team Progress Chart"
-                    className="w-100"
-                  />
-                </div>
+                <ProjectChart2 />
               </div>
             </div>
           </div>
@@ -447,7 +378,7 @@ const Dashboard = () => {
           </div>
           <div className="notification-sec">
             <div className="notification-num">
-              <i class="bi bi-envelope"></i>
+              <i className="bi bi-envelope"></i>
               <span className="badge bg-danger notification-badge">5</span>
             </div>
             <div className="notification-num">
