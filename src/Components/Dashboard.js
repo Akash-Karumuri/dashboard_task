@@ -96,9 +96,9 @@ const Dashboard = () => {
         </div>
       </div>
 
-      <div className="main-content">
+      <div className="main-content px-0">
         {/* Top Nav */}
-        <div className="top-nav container">
+        <div className="top-nav px-5 container">
           <div className="nav-tabs">
             <div className="nav-item">HR Admin</div>
             <div className="nav-item active">My Team</div>
@@ -106,7 +106,8 @@ const Dashboard = () => {
           </div>
         </div>
 
-        <div className="container px-0">
+        <div className="container flexcenter px-auto">
+          <div className="px-5">
           <div className="row px-0 mb-3">
             <div className="col-lg-7 col-sm-7">
               <div className="welcome-card">
@@ -175,8 +176,6 @@ const Dashboard = () => {
                     <p className="mb-0">Tasks</p>
                   </div>
                   <div>
-                    {/* <button className="btn btn-sm gen-btn me-2">Gen</button>
-                    <button className="btn btn-sm btn-secondary">Today</button> */}
                     <button className={`btn btn-sm me-2 ${activeButton === "gen"? "gen-btn-active": "btn-secondary"}`}
                       onClick={() => setActiveButton("gen")}>Gen</button>
 
@@ -335,46 +334,51 @@ const Dashboard = () => {
               </div>
             </div>
           </div>
-        </div>
-        <div className="row mb-3">
-          {/* Projects Progress */}
-          <div className="col-lg-5 col-sm-5">
-            <div className="card project-card">
-              <div className="card-header d-flex justify-content-between align-items-center">
-                <h5 className="mb-0">Projects Progress</h5>
-                <div>
-                  <span style={{ color: "#2BCB4E" }}>70%</span>
-                  <BsChevronRight />
+
+          <div className="row px-0 mb-3">
+            {/* Projects Progress */}
+            <div className="col-lg-5 col-sm-5">
+              <div className="card project-card">
+                <div className="card-header d-flex justify-content-between align-items-center">
+                  <h5 className="mb-0">Projects Progress</h5>
+                  <div>
+                    <span style={{ color: "#2BCB4E" }}>70%</span>
+                    <BsChevronRight />
+                  </div>
+                </div>
+                <div className="card-body">
+                  <ProjectChart1 />
                 </div>
               </div>
-              <div className="card-body">
-                <ProjectChart1 />
+            </div>
+
+            {/* Team Progress */}
+            <div className="col-lg-7 col-sm-7">
+              <div className="card team-progress-card">
+                <div className="card-header d-flex justify-content-between align-items-center">
+                  <h5 className="mb-0">Team Progress</h5>
+                  <div style={{ color: "#2BCB4E" }}>65%</div>
+                </div>
+                <div className="card-body">
+                  <ProjectChart2 />
+                </div>
               </div>
             </div>
           </div>
 
-          {/* Team Progress */}
-          <div className="col-lg-7 col-sm-7">
-            <div className="card team-progress-card">
-              <div className="card-header d-flex justify-content-between align-items-center">
-                <h5 className="mb-0">Team Progress</h5>
-                <div style={{ color: "#2BCB4E" }}>65%</div>
-              </div>
-              <div className="card-body">
-                <ProjectChart2 />
+          {/* Others Section */}
+          <div className="row px-0 mb-3">
+            <div className="col-12">
+              <div className="card px-0 other-sec">
+                <div className="card-header d-flex justify-content-between align-items-center">
+                  <h5 className="mb-0">Others</h5>
+                  <BsChevronDown />
+                </div>
               </div>
             </div>
           </div>
         </div>
-
-        {/* Others Section */}
-        <div className="card other-sec mb-3">
-          <div className="card-header d-flex justify-content-between align-items-center">
-            <h5 className="mb-0">Others</h5>
-            <BsChevronDown />
-          </div>
-        </div>
-      </div>
+        </div></div>
 
       {/* Right Notification Panel */}
       <div className="notification-panel">
@@ -392,7 +396,7 @@ const Dashboard = () => {
               <span className="badge bg-danger notification-badge">5</span>
             </div>
             <div className="notification-num">
-            <i class="bi bi-bell"></i>
+              <i className="bi bi-bell"></i>
               <span className="badge bg-danger notification-badge">5</span>
             </div>
           </div>

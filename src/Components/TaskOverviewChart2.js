@@ -94,15 +94,29 @@ const TaskStatusChart = () => {
           position: 'top',
           align: 'start',
           labels: {
+            generateLabels: (chart) => {
+              const pointStyles = ['rect', 'rect', 'rect', 'rect'];
+              return chart.data.datasets.map((dataset, i) => ({
+                text: dataset.label,
+                fillStyle: dataset.backgroundColor,
+                strokeStyle: dataset.borderColor,
+                lineWidth: dataset.borderWidth,
+                hidden: !chart.isDatasetVisible(i),
+                datasetIndex: i,
+                pointStyle: pointStyles[i % pointStyles.length],
+                fontColor: 'white',
+                boxWidth: 5,
+                boxHeight: 5
+              }));
+            },
             usePointStyle: true,
-            pointStyle: 'circle',
-            padding: 10,
             color: 'white',
-            boxWidth:20,
+            padding: 5,
             font: {
-              size: 10 
+              size: 10
             }
           }
+,          
         },
         tooltip: {
           backgroundColor: 'rgba(0, 0, 0, 0.7)'

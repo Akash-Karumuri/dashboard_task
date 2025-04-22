@@ -462,16 +462,15 @@ body{
   }
   .menu-item {
     margin-bottom: 10px;
-    height: 50px;
+    height: 40px;
     width: 100%;
   }
   .menu-label {
-    font-size: 22px;
+    font-size: 20px;
   }
   .project-card {
     max-width: 520px;
     padding: 20px;
-    margin-left: auto;
     
   }
   .overview-card {
@@ -498,8 +497,9 @@ body{
     border-radius: 12px;
   }
   .other-sec {
-    max-width: 1250px;
-    margin: auto;
+    max-width: 1320px;
+    margin-left: auto;
+    margin-right: auto;
   }
   .notification-panel{
     width: 65px;
@@ -522,8 +522,14 @@ body{
   }
   .user-profile{
     border-radius: 5px;
-    height: 50px;
+    height: 40px;
     padding-right: 10px;
+  }
+  .notification-icon span{
+    font-size: 20px;
+  }
+  .back-button-container{
+    top: 131px;
   }
 }
 
