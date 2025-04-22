@@ -75,7 +75,7 @@ const ProjectProgressChart = () => {
         ticks: {
           color: "white",
           font: {
-            size: 14,
+            size: 12,
           },
         },
         border: {
@@ -109,11 +109,11 @@ const ProjectProgressChart = () => {
         <p className="mx-5 text-warning mb-0">Project Progress</p>
       </div>
       <div className="position-relative" style={{ height: "220px" }}>
-        <Bar data={data} options={options} />
+        <Bar data={data} options={options}/>
         <div className="position-absolute top-0 end-0 h-100 d-flex flex-column justify-content-lg-around">
           {data.datasets[1].data.map((value, index) => (
-            <div key={index} className="text-white fw-bold">
-              {value}%
+            <div key={index} className="text-white  flexcenter py-0 my-0 ">
+              <p className="my-0 py-0">{value}%</p>
             </div>
           ))}
         </div>

@@ -98,7 +98,7 @@ const TaskStatusChart = () => {
             pointStyle: 'circle',
             padding: 10,
             color: 'white',
-            boxWidth:5,
+            boxWidth:20,
             font: {
               size: 10 
             }

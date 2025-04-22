@@ -18,6 +18,7 @@ body{
   overflow-x: hidden;   
   font-family: 'Segoe UI', sans-serif;
   box-sizing: border-box;
+  font-size: clamp(12px, 1.2vw, 16px);
 }
 ::-webkit-scrollbar{
     display: none;
@@ -53,7 +54,7 @@ body{
 
 .logo {
   color: white;
-  font-size: 24px;
+  font-size: clamp(18px, 2vw, 26px);
   font-weight: bold;
   margin: 0;
   letter-spacing: 1px;
@@ -165,7 +166,11 @@ body{
   flex: 1;
   padding: 0px 20px 0px 60px;
 }
-
+.card-header,
+.card-body,
+.menu-item {
+  font-size: clamp(10px, 1.2vw, 16px);
+}
 /* Top Nav */
 .top-nav {
   display: flex;
@@ -312,6 +317,11 @@ body{
 .gen-btn{
   background-color:#F4A84E;
 }
+.gen-btn-active {
+  background-color: #F4A84E !important;
+  color: white !important;
+  border: none;
+}
 
 /* Task Overview */
 .overview-card{
@@ -378,10 +388,9 @@ body{
 .user-profile img{
   border-radius: 5px;
   height: 100%;
-  margin-right: 20px;
 }
 .notification-sec{
-  background-color: #33342f;
+  background-color: #362b3f;
   border-radius:5px ;
 }
 .notification-sec .notification-num{
@@ -417,10 +426,110 @@ body{
   color: #666;
   margin-bottom: 50px;
 }
-
-@media (max-width: 992px) {
+@media(min-width:1024px){
+  .welcome-card,.quote-card,.team-progress-card{
+    height: 100%;
+  }
+  .overview-card{
+    height: 100%;
+  }
+  canvas{
+    height: 100%;
+    padding: 0%;
+  }
+  .project-card{
+    width: 100%;
+    height: 100%;
+  }
+  
+}
+.card ,.welcome-card{
+  border: 1px solid #f3f3f350;
+  border-radius: 5px;
+  overflow: hidden;
+}
+@media (min-width: 1400px){
+  .main-content{
+    overflow-x: hidden;
+  }
   .sidebar {
-    width: 60px;
+    width: 220px;
+    height: 100vh;
+    padding: 2px 15px;
+  }
+  .menu-container {
+    padding: 30px 20px 0px 0px;
+  }
+  .menu-item {
+    margin-bottom: 10px;
+    height: 50px;
+    width: 100%;
+  }
+  .menu-label {
+    font-size: 22px;
+  }
+  .project-card {
+    max-width: 520px;
+    padding: 20px;
+    margin-left: auto;
+    
+  }
+  .overview-card {
+    max-width: 480px;
+    min-height: 450px;
+    padding: 20px;
+    overflow: hidden;
+  }
+  .task-card {
+    max-width: 100%;
+    max-height: 520px;
+    padding: 20px;
+    overflow: hidden;
+  }
+  .team-progress-card {
+    max-width: 720px;
+    padding: 0px 0px 0px 20px;
+    overflow: hidden;
+  }
+  .main-content {
+    padding: 30px auto;
+  }
+  .card {
+    border-radius: 12px;
+  }
+  .other-sec {
+    max-width: 1250px;
+    margin: auto;
+  }
+  .notification-panel{
+    width: 65px;
+  }
+  .notification-sec{
+    width: 80%;
+    margin:25px 0px;
+  }
+  .notification-sec i,.notification-icon{
+    font-size: 30px;
+    padding: 10px;
+    width: 40px;
+  }
+  .notification-icons{
+    padding-right: 0;
+  }
+  .notification-badge{
+    font-size: 15px;
+    padding: 10px;
+  }
+  .user-profile{
+    border-radius: 5px;
+    height: 50px;
+    padding-right: 10px;
+  }
+}
+
+/* @media (max-width: 992px) {
+  .sidebar {
+    width: 160px;
   }
   
   .logo-container {
@@ -500,4 +609,5 @@ body{
     transform: none;
     margin-bottom: 0;
   }
-}
+} */
+
